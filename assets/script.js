@@ -26,3 +26,14 @@ form.addEventListener("submit", (event) => {
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank", "noopener");
 });
+
+// Placeholder only — wire this up to a real provider (Mailchimp, ConvertKit, etc.)
+// before launch. Right now it doesn't send the email anywhere.
+const newsletterForm = document.getElementById("newsletter-form");
+const newsletterNote = document.getElementById("newsletter-note");
+
+newsletterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  newsletterForm.reset();
+  newsletterNote.textContent = "Thanks for subscribing! (Preview only — connect a real email provider before launch.)";
+});
